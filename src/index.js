@@ -21,6 +21,34 @@ app.get('/task2a', async (req, res) => {
 });
 
 
+app.get('/task2b', async (req, res) => {
+  try {
+    const fullname = req.query.fullname || '';
+    const re = new RegExp('^(.[^ 0-9]*)?( )?(.[^ 0-9]*)?( )?(.[^ 0-9]*)?$', 'im');
+    const parsed = fullname.match(re);
+    console.log(fullname);
+    console.log(parsed);
+    if (!parsed) {
+      return res.send('Invalid fullname');
+    }
+    if (parsed[1] && parsed[3] && parsed[5]) {
+      return res.send(`${parsed[5]} ${parsed[1].charAt(0)}. ${parsed[3].charAt(0)}.`);
+    }
+    if (parsed[1] && parsed[3]) {
+      return res.send(`${parsed[3]} ${parsed[1].charAt(0)}.`);
+    }
+    if (parsed[1]) {
+      return res.send(parsed[1]);
+    }
+    res.send('Invalid fullname');
+} catch(err) {
+    console.log(err);
+    return res.json({
+      err
+    });
+  }
+});
+
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!');
-})
+});
