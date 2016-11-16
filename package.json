@@ -31,7 +31,10 @@
     "babel-cli": "^6.18.0",
     "babel-runtime": "^6.11.6",
     "cors": "^2.8.1",
-    "express": "^4.14.0"
+    "es6-promise": "^4.0.5",
+    "express": "^4.14.0",
+    "isomorphic-fetch": "^2.2.1",
+    "lodash": "latest"
   },
   "devDependencies": {
     "babel-cli": "^6.16.0",

@@ -62,6 +62,9 @@ app.get('/task2c', async(req, res) => {
   }
 });
 
+import task3ARoute from './task3a';
+app.use('/task3a', task3ARoute);
+
 
 app.listen(3001, function () {
   console.log('Example app listening on port 3001!');
