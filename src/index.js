@@ -19,12 +19,14 @@ app.get('/task2a', async(req, res) => {
     });
   }
 });
-
+function capitalize(txt) {
+  return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+}
 
 app.get('/task2b', async(req, res) => {
   try {
     const fullname = req.query.fullname || '';
-    const re = new RegExp('^(.[^ 0-9]*)?( )?(.[^ 0-9]*)?( )?(.[^ 0-9]*)?$', 'im');
+    const re = new RegExp('^ *([^ 0-9_\/]*)?( *)?([^ 0-9_\/]*)?( *)?([^ 0-9_\/]*)?$', 'im');
     const parsed = fullname.match(re);
     console.log(fullname);
     console.log(parsed);
@@ -32,13 +34,13 @@ app.get('/task2b', async(req, res) => {
       return res.send('Invalid fullname');
     }
     if (parsed[1] && parsed[3] && parsed[5]) {
-      return res.send(`${parsed[5]} ${parsed[1].charAt(0)}. ${parsed[3].charAt(0)}.`);
+      return res.send(`${capitalize(parsed[5])} ${parsed[1].charAt(0).toUpperCase()}. ${parsed[3].charAt(0).toUpperCase()}.`);
     }
     if (parsed[1] && parsed[3]) {
-      return res.send(`${parsed[3]} ${parsed[1].charAt(0)}.`);
+      return res.send(`${capitalize(parsed[3])} ${parsed[1].charAt(0).toUpperCase()}.`);
     }
     if (parsed[1]) {
-      return res.send(parsed[1]);
+      return res.send(capitalize(parsed[1]));
     }
     res.send('Invalid fullname');
   } catch (err) {
