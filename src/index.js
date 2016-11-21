@@ -64,6 +64,31 @@ app.get('/task2c', async(req, res) => {
   }
 });
 
+import {task2d, testTask2d} from './task2d';
+app.get('/task2d', async(req, res) => {
+  try {
+    const color = task2d(req.query.color);
+    res.send(color);
+  } catch (err) {
+    console.log(err);
+    return res.json({
+      err
+    });
+  }
+});
+app.get('/testTask2d', async(req, res) => {
+  try {
+    const testRes = testTask2d();
+    res.send(testRes);
+  } catch (err) {
+    console.log(err);
+    return res.json({
+      err
+    });
+  }
+});
+
+
 import task3ARoute from './task3a';
 app.use('/task3a', task3ARoute);
 
