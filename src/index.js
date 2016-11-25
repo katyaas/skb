@@ -94,6 +94,9 @@ import task3BRouter from './task3b';
 app.use('/task3b', task3BRouter);
 
 
+import task3CRoute from './task3c';
+app.use('/task3c', task3CRoute);
+
 
 import task3ARoute from './task3a';
 app.use('/task3a', task3ARoute);
