@@ -99,6 +99,10 @@ import task3ARoute from './task3a';
 app.use('/task3a', task3ARoute);
 
 
+import task2XRoute from './task2x';
+app.use('/task2x', task2XRoute);
+
+
 
 app.listen(3001, function () {
   console.log('Example app listening on port 3001!');

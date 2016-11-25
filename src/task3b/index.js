@@ -1,6 +1,5 @@
 import express from 'express';
 import fetch from 'isomorphic-fetch';
-import _ from 'lodash';
 import mongoose from 'mongoose';
 import Promise from 'bluebird';
 import User from './user';
