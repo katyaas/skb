@@ -33,9 +33,11 @@
     "cors": "^2.8.1",
     "es6-promise": "^4.0.5",
     "express": "^4.14.0",
+    "hsl-to-hex": "latest",
     "isomorphic-fetch": "^2.2.1",
     "lodash": "latest",
-    "hsl-to-hex": "latest"
+    "mongoose": "^4.7.0",
+    "bluebird": "latest"
   },
   "devDependencies": {
     "babel-cli": "^6.16.0",

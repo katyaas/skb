@@ -89,8 +89,15 @@ app.get('/testTask2d', async(req, res) => {
 });
 
 
+
+import task3BRouter from './task3b';
+app.use('/task3b', task3BRouter);
+
+
+
 import task3ARoute from './task3a';
 app.use('/task3a', task3ARoute);
+
 
 
 app.listen(3001, function () {
